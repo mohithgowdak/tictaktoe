@@ -1,0 +1,133 @@
+/* General styles for dark theme with neon blue-green colors */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    background-color: #121212;  /* Dark background */
+    color: #00e6e6;  /* Neon blue-green text color */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Neon Game Board */
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 15px;
+    width: 90vmin;
+    height: 90vmin;
+    max-width: 600px;
+    max-height: 600px;
+    margin: 20px auto;
+    border: 5px solid #00e6e6; /* Neon blue-green border around the game board */
+    box-shadow: 0 0 20px #00e6e6; /* Neon glow around the game board */
+    padding: 10px;
+}
+
+/* Neon Cell Styles */
+.cell {
+    background-color: #1e1e1e;
+    border: 3px solid #00e6e6;
+    font-size: calc(30px + 2vmin);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #00ff00;  /* Neon green for cell text */
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 15px #00ff00;  /* Neon glow for text */
+}
+
+.cell:hover {
+    background-color: #333;
+    box-shadow: 0 0 25px #00ff00; /* Increase neon glow on hover */
+}
+
+/* Highlight winning cells */
+.cell.winning-cell {
+    background-color: #00ff99;  /* Neon green-blue for winning cells */
+    color: #000;
+    position: relative;
+    box-shadow: 0 0 30px #00ff99;  /* Neon glow for winning cells */
+}
+
+.cell.winning-cell::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 6px;
+    background-color: #00e6e6;  /* Neon blue-green for strike line */
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    box-shadow: 0 0 10px #00e6e6; /* Neon glow for strike line */
+}
+
+/* Status display with neon colors */
+#status {
+    font-size: calc(18px + 1vmin);
+    margin: 20px;
+    color: #00e6e6;  /* Neon blue-green for the status */
+    text-shadow: 0 0 10px #00e6e6;  /* Neon glow for the status text */
+}
+
+/* Neon Reset Button */
+#reset-button {
+    padding: 15px 30px;
+    font-size: calc(14px + 1vmin);
+    cursor: pointer;
+    background-color: #00e6e6;  /* Neon blue-green */
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 20px #00e6e6;  /* Neon glow for button */
+}
+
+#reset-button:hover {
+    background-color: #00b3b3;  /* Darker blue on hover */
+    box-shadow: 0 0 30px #00b3b3;  /* Increase neon glow on hover */
+}
+
+/* Full-screen winner display */
+#winner-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #00ff00;  /* Neon green */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 3em;
+    z-index: 100;
+    text-shadow: 0 0 20px #00ff00; /* Neon glow for the popup text */
+}
+
+#winner-popup button {
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 1em;
+    background-color: #00e6e6;  /* Neon blue-green */
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 20px #00e6e6;
+}
+
+#winner-popup button:hover {
+    background-color: #00b3b3; /* Darker blue on hover */
+    box-shadow: 0 0 30px #00b3b3;
+}
