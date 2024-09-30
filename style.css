@@ -1,17 +1,77 @@
 /* General styles for dark theme with neon blue-green colors */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
     background-color: #121212;  /* Dark background */
     color: #00e6e6;  /* Neon blue-green text color */
     margin: 0;
-    padding: 20px;
+    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    width: 100vw;
     overflow: hidden;
+}
+
+/* Centering home page and game content */
+#home-page, #game-window {
+    max-width: 100vw;
+    max-height: 100vh;
+    padding: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Neon title style */
+.neon-title {
+    font-size: calc(20px + 4vmin);
+    color: #00e6e6;  /* Neon blue-green */
+    text-shadow: 0 0 15px #00e6e6, 0 0 30px #00e6e6, 0 0 45px #00e6e6;
+    margin-bottom: 10px;
+}
+
+/* Description style */
+.description {
+    font-size: calc(12px + 2vmin);
+    color: #00ff00;  /* Neon green */
+    text-shadow: 0 0 10px #00ff00;
+    margin-bottom: 20px;
+}
+
+/* Game mode selection buttons */
+.game-mode-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.game-mode-buttons button {
+    padding: calc(10px + 1vmin) calc(20px + 1vmin);
+    font-size: calc(12px + 1vmin);
+    cursor: pointer;
+    background-color: #00e6e6;  /* Neon blue-green */
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+    box-shadow: 0 0 20px #00e6e6;  /* Neon glow for buttons */
+}
+
+.game-mode-buttons button:hover {
+    background-color: #00b3b3;  /* Darker blue on hover */
+    box-shadow: 0 0 30px #00b3b3;
+    transform: scale(1.05);  /* Slight enlarge button on hover */
 }
 
 /* Neon Game Board */
@@ -19,22 +79,21 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    gap: 15px;
-    width: 90vmin;
-    height: 90vmin;
-    max-width: 600px;
-    max-height: 600px;
-    margin: 20px auto;
+    gap: 5px;
+    width: 85vmin;
+    height: 85vmin;
+    max-width: 90vw;
+    max-height: 80vh;
     border: 5px solid #00e6e6; /* Neon blue-green border around the game board */
     box-shadow: 0 0 20px #00e6e6; /* Neon glow around the game board */
-    padding: 10px;
+    padding: 5px;
 }
 
 /* Neon Cell Styles */
 .cell {
     background-color: #1e1e1e;
     border: 3px solid #00e6e6;
-    font-size: calc(30px + 2vmin);
+    font-size: calc(18px + 3vmin);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -61,7 +120,7 @@ body {
     content: '';
     position: absolute;
     width: 100%;
-    height: 6px;
+    height: 4px;
     background-color: #00e6e6;  /* Neon blue-green for strike line */
     top: 50%;
     left: 0;
@@ -71,28 +130,30 @@ body {
 
 /* Status display with neon colors */
 #status {
-    font-size: calc(18px + 1vmin);
-    margin: 20px;
+    font-size: calc(14px + 1vmin);
+    margin: 10px;
     color: #00e6e6;  /* Neon blue-green for the status */
     text-shadow: 0 0 10px #00e6e6;  /* Neon glow for the status text */
 }
 
 /* Neon Reset Button */
 #reset-button {
-    padding: 15px 30px;
-    font-size: calc(14px + 1vmin);
+    padding: calc(8px + 1vmin) calc(15px + 1vmin);
+    font-size: calc(12px + 1vmin);
     cursor: pointer;
     background-color: #00e6e6;  /* Neon blue-green */
     color: #000;
     border: none;
     border-radius: 10px;
-    transition: background-color 0.3s, box-shadow 0.3s;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
     box-shadow: 0 0 20px #00e6e6;  /* Neon glow for button */
+    margin: 15px auto;  /* Center horizontally and add vertical spacing */
+    display: block; /* Ensures the button takes full width and respects margin auto */
 }
-
 #reset-button:hover {
     background-color: #00b3b3;  /* Darker blue on hover */
-    box-shadow: 0 0 30px #00b3b3;  /* Increase neon glow on hover */
+    box-shadow: 0 0 30px #00b3b3;
+    transform: scale(1.05);  /* Slight enlarge button on hover */
 }
 
 /* Full-screen winner display */
@@ -109,25 +170,26 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    font-size: 3em;
+    font-size: calc(24px + 2vmin);
     z-index: 100;
     text-shadow: 0 0 20px #00ff00; /* Neon glow for the popup text */
 }
 
 #winner-popup button {
     margin-top: 20px;
-    padding: 15px 30px;
-    font-size: 1em;
+    padding: calc(10px + 1vmin) calc(20px + 1vmin);
+    font-size: calc(12px + 1vmin);
     background-color: #00e6e6;  /* Neon blue-green */
     color: #000;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
     box-shadow: 0 0 20px #00e6e6;
 }
 
 #winner-popup button:hover {
     background-color: #00b3b3; /* Darker blue on hover */
     box-shadow: 0 0 30px #00b3b3;
+    transform: scale(1.05);  /* Slight enlarge button on hover */
 }

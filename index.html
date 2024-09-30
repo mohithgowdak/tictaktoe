@@ -3,24 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic Tac Toe</title>
+    <title>Tic Tac Toe - AI & Multiplayer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Tic Tac Toe</h1>
-    <div id="game-board">
-        <div class="cell" data-index="0"></div>
-        <div class="cell" data-index="1"></div>
-        <div class="cell" data-index="2"></div>
-        <div class="cell" data-index="3"></div>
-        <div class="cell" data-index="4"></div>
-        <div class="cell" data-index="5"></div>
-        <div class="cell" data-index="6"></div>
-        <div class="cell" data-index="7"></div>
-        <div class="cell" data-index="8"></div>
+    <!-- Home Page for Game Mode Selection -->
+    <div id="home-page">
+        <h1 class="neon-title">Welcome to Neon Tic Tac Toe</h1>
+        <p class="description">A vibrant and fun way to play Tic Tac Toe. Choose your mode:</p>
+        <div class="game-mode-buttons">
+            <button onclick="startMultiplayer()">Multiplayer</button>
+            <button onclick="startAIvsPlayer()">Play Against AI</button>
+        </div>
     </div>
-    <p id="status">Player X's turn</p>
-    <button id="reset-button">Reset Game</button>
+
+    <!-- Game Window -->
+    <div id="game-window" style="display:none;">
+        <h1>Tic Tac Toe</h1>
+        <div id="game-board">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+        <p id="status">Player X's turn</p>
+        <button id="reset-button" style="display:none;">Reset Game</button>
+    </div>
+
+    <!-- Winner Popup -->
+    <div id="winner-popup" style="display:none;">
+        <p id="winner-message"></p>
+        <button onclick="resetGame()">Reset Game</button>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
