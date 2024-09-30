@@ -22,7 +22,7 @@ body {
 }
 
 /* Centering home page and game content */
-#home-page, #game-window {
+#home-page{
     max-width: 100vw;
     max-height: 100vh;
     padding: 10px;
@@ -31,6 +31,16 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+#game-window {
+    max-width: 100vw;
+    max-height: 100vh;
+    padding: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 /* Neon title style */
