@@ -28,9 +28,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;  /* Ensure space is evenly distributed */
-    padding: 5px;
+    justify-content: center;
     position: relative;
+    gap: 10px;
 }
 
 /* Neon title style */
@@ -80,10 +80,10 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     gap: 5px;
-    width: 95vmin;  /* Make the board larger to fill more of the viewport */
-    height: 95vmin; /* Use vmin to ensure the board is always a square */
+    width: 90vmin;  /* Make the board as large as possible */
+    height: 90vmin; /* Use vmin to ensure the board is always a square */
     max-width: 100vw;
-    max-height: 100vh;
+    max-height: 80vh;
     border: 5px solid #00e6e6; /* Neon blue-green border around the game board */
     box-shadow: 0 0 20px #00e6e6; /* Neon glow around the game board */
     padding: 5px;
@@ -131,9 +131,9 @@ body {
 /* Status display with neon colors */
 #status {
     font-size: calc(14px + 1vmin);
-    margin: 5px 0;
     color: #00e6e6;  /* Neon blue-green for the status */
     text-shadow: 0 0 10px #00e6e6;  /* Neon glow for the status text */
+    margin-bottom: 10px;  /* Add margin to space from the game board */
 }
 
 /* Neon Reset Button */
@@ -147,8 +147,8 @@ body {
     border-radius: 10px;
     transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
     box-shadow: 0 0 20px #00e6e6;  /* Neon glow for button */
-    margin-top: 10px;
-    align-self: center;
+    align-self: center;  /* Ensure the button is always centered */
+    margin-top: 10px;  /* Add some space between the status and the button */
 }
 
 #reset-button:hover {
